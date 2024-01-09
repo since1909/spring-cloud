@@ -16,7 +16,7 @@ public class WebSecurity {
         http.csrf().disable();
         http.headers().frameOptions().disable();
         http.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/users/**").permitAll()
+                .requestMatchers("/**").permitAll()
                 .requestMatchers(PathRequest.toH2Console()).permitAll()
         );
         return http.build();
